@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chesskrieg</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #111;
+      color: #ccc;
+    }
+    header {
+      background-color: #000;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 0 10px #00ff6655;
+    }
+    .logo {
+      font-size: 1.5em;
+      color: #00ff66;
+      font-weight: bold;
+      text-shadow: 0 0 5px #00ff66;
+      cursor: pointer;
+    }
+    nav a {
+      margin: 0 12px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00ff66;
+    }
+    nav i {
+      margin-right: 6px;
+    }
+    .page {
+      display: none;
+      padding: 30px 20px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .active {
+      display: block;
+    }
+    button {
+      background: none;
+      border: 1px solid #00ff66;
+      color: #00ff66;
+      padding: 12px 20px;
+      margin: 10px 8px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 0 8px #00ff6633;
+      transition: all 0.2s ease-in-out;
+    }
+    button:hover {
+      background-color: #00ff66;
+      color: #000;
+      box-shadow: 0 0 12px #00ff66;
+    }
+    .category {
+      margin-bottom: 30px;
+    }
+    .category h3 {
+      color: #00ff66;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" onclick="showPage('home')">Chesskrieg</div>
+    <nav>
+      <a onclick="showPage('home')"><i class="fas fa-chess"></i>Главная</a>
+      <a onclick="showPage('analysis')"><i class="fas fa-brain"></i>Анализ</a>
+      <a onclick="showPage('videos')"><i class="fas fa-video"></i>Видео</a>
+      <a onclick="showPage('about')"><i class="fas fa-info-circle"></i>О проекте</a>
+      <a onclick="showPage('play')"><i class="fas fa-bolt"></i>Играть</a>
+    </nav>
+  </header>
+  <main>
+    <div id="home" class="page active">
+      <h1 style="color:#00ff66">Chesskrieg</h1>
+      <p>Тихая война. Ходы без слов.</p>
+      <button onclick="location.href='parties.html'">Партии</button>
+      <button onclick="location.href='breakdowns.html'">Разборы</button>
+      <button onclick="location.href='strategies.html'">Стратегии</button>
+    </div>
+
+    <div id="analysis" class="page">
+      <h2>Анализ</h2>
+      <p>Раздел для глубокого анализа партий.</p>
+    </div>
+
+    <div id="videos" class="page">
+      <h2>Видео</h2>
+      <p>Подборка видео по шахматной стратегии.</p>
+    </div>
+
+    <div id="about" class="page">
+      <h2>О проекте</h2>
+      <p>Минималистичный шахматный проект. Без имён. Без лиц. Только холодная логика и стратегия.</p>
+    </div>
+
+    <div id="play" class="page">
+      <h2 style="color:#00ff66">Играть</h2>
+  
+<div class="category">
+  <h3>Пуля</h3>
+  <button onclick="startGame('30+0')">30+0</button>
+  <button onclick="startGame('1+0')">1+0</button>
+  <button onclick="startGame('1+1')">1+1</button>
+</div>
+
+<div class="category">
+  <h3>Блиц</h3>
+  <button onclick="startGame('3+0')">3+0</button>
+  <button onclick="startGame('3+2')">3+2</button>
+  <button onclick="startGame('5+0')">5+0</button>
+</div>
+
+<div class="category">
+  <h3>Рапид</h3>
+  <button onclick="startGame('10+0')">10+0</button>
+  <button onclick="startGame('10+5')">10+5</button>
+  <button onclick="startGame('15+10')">15+10</button>
+</div>
