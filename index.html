@@ -138,3 +138,23 @@
   <button onclick="startGame('10+5')">10+5</button>
   <button onclick="startGame('15+10')">15+10</button>
 </div>
+      <div class="category">
+  <h3>Классика</h3>
+  <button onclick="startGame('20+0')">20+0</button>
+  <button onclick="startGame('30+0')">30+0</button>
+  <button onclick="startGame('30+30')">30+30</button>
+</div>
+    </div>
+  </main>
+  <script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+
+  function startGame(timeControl) {
+    window.location.href = play.html?time=${encodeURIComponent(timeControl)};
+  }
+</script>
+</body>
+</html>
